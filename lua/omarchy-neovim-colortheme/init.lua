@@ -1,5 +1,5 @@
-local M	 = {}
-function M.setup()
+local M = {}
+M.setup = function()
 	local config_path = vim.fn.expand("~/.config/omarchy/current/theme/neovim.lua")
 	local chunk = loadfile(config_path)
 	if chunk then
