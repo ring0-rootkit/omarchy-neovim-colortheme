@@ -21,14 +21,17 @@ M.setup = function()
 				end
 			end
 
-			if plugin then
+			if not plugin then
 				if colorscheme_name == "tokyonight" then
 					plugin = "folke/tokyonight.nvim"
 				elseif colorscheme_name == "catppuccin" then
 					plugin = "catppuccin/nvim"
+				else
+					print("unsupported theme")
+					return
 				end
-				vim.pack.add({"https://github.com/" .. plugin})
 			end
+			vim.pack.add({"https://github.com/" .. plugin})
 
 			if colorscheme_name then
 				vim.cmd("colorscheme " .. colorscheme_name)
