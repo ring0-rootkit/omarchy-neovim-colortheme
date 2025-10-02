@@ -22,6 +22,11 @@ M.setup = function()
 			end
 
 			if plugin then
+				if colorscheme_name == "tokyonight" then
+					plugin = "folke/tokyonight.nvim"
+				elseif colorscheme_name == "catppuccin" then
+					plugin = "catppuccin/nvim"
+				end
 				vim.pack.add({"https://github.com/" .. plugin})
 			end
 
